@@ -4,7 +4,7 @@ os.system("clear")
 print("Logs have Started")
 alert_pps = sys.argv[1]
 alert_pps = int(alert_pps)
-URL = "https://discord.com/api/webhooks/865723462981779506/MTzDoiPaVcBxmfUxov3Yay_G7m4VEmdl7x6lf31FpgKfq1-gjMdLkjsyZniv31oDhuNs"
+URL = "https://discord.com/api/webhooks/"
 dumpdr = sys.argv[2]
 def getpps():
     o = subprocess.getoutput("grep ens18: /proc/net/dev | cut -d :  -f2 | awk '{ print $2 }'")
