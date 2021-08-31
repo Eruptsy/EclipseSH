@@ -19,7 +19,7 @@ def attackdetected(pps):
     now = datetime.now()
     current_time = now.strftime("%d-%m-%Y--%H:%M:%S")
     pps = getpps()
-    os.system(f"tcpdump -n -s0 -c {alert_pps} -w /root/{dumpdr}/capture.{current_time}.pcap")
+    os.system(f"tcpdump -n -s0 -c {alert_pps} -w /root/TCPDUMP/capture.{current_time}.pcap")
     print(f"\n\nAttack Started at {current_time}\nPPS : {pps}\nDump name : capture.{current_time}.pcap")
     payload = {
           "embeds": [
