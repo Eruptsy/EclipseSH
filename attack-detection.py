@@ -2,8 +2,7 @@ import os, time, subprocess, sys, time, datetime, requests, json
 from datetime import datetime
 os.system("clear")
 print("Logs have Started")
-alert_pps = sys.argv[1]
-alert_pps = int(alert_pps)
+alert_pps = int(sys.argv[1])
 URL = "https://discord.com/api/webhooks/"
 def getpps():
     o = subprocess.getoutput("grep ens18: /proc/net/dev | cut -d :  -f2 | awk '{ print $2 }'")
@@ -11,8 +10,7 @@ def getpps():
     t = subprocess.getoutput("grep ens18: /proc/net/dev | cut -d :  -f2 | awk '{ print $2 }'")
     pps = int(o) - int(t)
     pps = str(pps)
-    pps = pps.replace("-", "")
-    pps = int(pps)
+    pps = int(pps.replace("-", ""))
     return(pps)
 def attackdetected(pps):
     now = datetime.now()
