@@ -60,9 +60,6 @@ def attackdetected(pps):
     while pps > alert_pps:
         pps = getpps()
         time.sleep(1)
-pps = getpps()
-if pps > alert_pps:
-    attackdetected(pps)
 while True:
     pps = getpps()
     if pps > alert_pps:
