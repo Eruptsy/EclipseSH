@@ -8,7 +8,7 @@ def getpps():
     o = subprocess.getoutput("grep ens18: /proc/net/dev | cut -d :  -f2 | awk '{ print $2 }'")
     time.sleep(1)
     t = subprocess.getoutput("grep ens18: /proc/net/dev | cut -d :  -f2 | awk '{ print $2 }'")
-    pps = str(int(o) - int(t)).replace("-", "")
+    pps = int(str(int(o) - int(t)).replace("-", ""))
     return(pps)
 def attackdetected(pps):
     now = datetime.now()
