@@ -6,9 +6,9 @@ alert_pps = int(sys.argv[1])
 interface = str(sys.argv[2])
 URL = "https://discord.com/api/webhooks/"
 def getpps():
-    o = subprocess.getoutput(f"grep {interface}: /proc/net/dev | cut -d :  -f2 | awk '{ print $2 }'")
+    o = subprocess.getoutput(f"grep {interface}: /proc/net/dev | cut -d :  -f2 "+"| awk '{ print $2 }'")
     time.sleep(1)
-    t = subprocess.getoutput(f"grep {interface}: /proc/net/dev | cut -d :  -f2 | awk '{ print $2 }'")
+    t = subprocess.getoutput(f"grep {interface}: /proc/net/dev | cut -d :  -f2 "+"| awk '{ print $2 }'")
     pps = int(str(int(o) - int(t)).replace("-", ""))
     return(pps)
 def attackdetected(pps):
